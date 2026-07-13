@@ -1,0 +1,745 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #1c1e21;
+}
+
+a {
+  text-decoration: none;
+  color: #1877f2;
+}
+
+.fb-error {
+  background: #fde2e1;
+  color: #d8000c;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   1. SIMPLE LOGIN PAGE  (matches screenshot: image 1)
+   ========================================================= */
+.simple-login-page {
+  min-height: 100vh;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 90px;
+}
+
+.simple-login-title {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  color: #050505;
+  margin: 0 0 8px 0;
+}
+
+.simple-login-card {
+  width: 460px;
+  max-width: 90vw;
+  padding: 20px;
+}
+
+.simple-input-group {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.simple-input {
+  width: 100%;
+  padding: 20px 20px;
+  font-size: 17px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  display: block;
+  text-align: center;
+  background: #fff;
+}
+
+.simple-input:hover {
+  border-color: #000;
+}
+
+.simple-input:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+}
+
+.simple-input-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #606770;
+  pointer-events: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.simple-input:focus+.simple-input-label,
+.simple-input:not(:placeholder-shown)+.simple-input-label {
+  left: 16px;
+  top: 7px;
+  transform: translate(0, 0);
+  font-size: 11px;
+  color: #1877f2;
+}
+
+.simple-input:focus,
+.simple-input:not(:placeholder-shown) {
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+.simple-login-btn {
+  width: 100%;
+  background: #1877f2;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.simple-login-btn:hover {
+  background: #166fe5;
+}
+
+.simple-login-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.simple-forgot {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.simple-forgot a {
+  font-size: 14px;
+}
+
+.simple-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.simple-or-line {
+  flex: 1;
+  height: 1px;
+  background: #dadde1;
+}
+
+.simple-or-text {
+  font-size: 13px;
+  color: #606770;
+}
+
+.simple-create-wrap {
+  text-align: center;
+}
+
+.simple-create-btn {
+  display: inline-block;
+  background: #31A24C;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.simple-create-btn:hover {
+  background: #32a420;
+}
+
+/* =========================================================
+   2. REGISTRATION PAGE  (matches screenshots: images 2, 3, 4)
+   ========================================================= */
+
+.reg-hint a,
+.reg-legal a {
+  font-weight: 600;
+}
+
+.reg-page {
+  min-height: 100vh;
+  background: #fff;
+  padding: 24px 0 0;
+}
+
+.reg-container {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.reg-back-arrow {
+  display: inline-block;
+  font-size: 22px;
+  color: #606770;
+  margin-bottom: 12px;
+}
+
+.reg-meta-logo {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reg-meta-logo-img {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+.reg-meta-logo-text {
+  font-size: 18px;
+  font-weight: 6 00;
+  color: #4e4f50;
+}
+
+.meta-logo {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  color: #050505;
+}
+
+.reg-title {
+  font-size: 28px;
+  margin: 0 0 8px 0;
+}
+
+.reg-subtitle {
+  font-size: 15px;
+  color: #444950;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+}
+
+.reg-label {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 14px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reg-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.reg-input {
+  width: 100%;
+  padding: 16px 16px;
+  font-size: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 12px;
+  display: block;
+}
+
+.reg-input:hover {
+  border-color: #000;
+}
+
+.reg-input:focus {
+  outline: none;
+  border-color: #1877f2;
+}
+
+.reg-input-error {
+  border-color: #d8000c !important;
+}
+
+.reg-input-group {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+/* Fixed padding at all times so the box never resizes on focus */
+.reg-input-group .reg-input {
+  padding: 22px 16px 8px 16px;
+}
+
+.reg-input-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #65676b;
+  pointer-events: none;
+  transition: all 0.15s ease;
+}
+
+.reg-input:focus+.reg-input-label,
+.reg-input:not(:placeholder-shown)+.reg-input-label {
+  top: 8px;
+  transform: translateY(0);
+  font-size: 11px;
+  color: #1877f2;
+}
+
+.reg-input-error+.reg-input-label {
+  color: #d8000c !important;
+}
+
+.reg-field-error {
+  font-size: 12px;
+  color: #d8000c;
+  margin: -8px 0 10px;
+}
+
+.reg-name-row {
+  display: flex;
+  gap: 10px;
+}
+
+.reg-half {
+  width: 50%;
+}
+
+.reg-dob-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.reg-select {
+  flex: 1;
+  padding: 16px 12px;
+  border: 1px solid #dddfe2;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #fff;
+  color: #606770;
+}
+
+.reg-select:hover {
+  border-color: #000;
+}
+
+.reg-select:focus {
+  outline: none;
+  border-color: #1877f2;
+}
+
+.reg-select:invalid {
+  color: #606770;
+}
+
+.reg-select:focus:invalid {
+  color: #1877f2;
+}
+
+.reg-select:valid {
+  color: #1c1e21;
+}
+
+.reg-select-full {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.reg-hint {
+  font-size: 14px;
+  color: #444950;
+  line-height: 1.4;
+  margin: 6px 0 0;
+}
+
+.reg-legal {
+  font-size: 14px;
+  color: #444950;
+  line-height: 1.4;
+  margin: 12px 0 0;
+}
+
+.reg-hint a,
+.reg-legal a {
+  font-weight: 600;
+}
+
+.reg-submit-btn {
+  display: block;
+  width: 100%;
+  background: #1877f2;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 0;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.reg-submit-btn:hover {
+  background: #166fe5;
+}
+
+.reg-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.reg-have-account-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: #fff;
+  color: #1c1e21;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #dddfe2;
+  border-radius: 24px;
+  padding: 11px 0;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.reg-have-account-btn:hover {
+  background: #f5f6f7;
+}
+
+/* Shared footer (registration + full login page) */
+.reg-footer {
+  padding: 24px 30px 30px;
+  font-size: 13px;
+  color: #737373;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+
+.reg-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+  margin-left: 150px;
+
+}
+
+.reg-footer-languages a {
+  color: #737373;
+}
+
+.reg-footer-row a {
+  color: #737373;
+}
+
+.reg-footer-row a:hover {
+  text-decoration: underline;
+}
+
+.reg-footer-copyright {
+    margin-top: 20px;
+    color: #737373;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* =========================================================
+   3. FULL TWO-COLUMN LOGIN PAGE  (matches screenshots: images 5, 6)
+   ========================================================= */
+.full-login-page {
+  min-height: 100vh;
+  background: #fff;
+  padding: 30px 0 0;
+}
+
+.full-login-top {
+  position: relative;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 60px;
+  padding: 10px 0 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.full-login-top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 80%;
+  width: 1px;
+  background: #dadde1;
+  transform: translateX(-50%);
+}
+
+.full-login-left {
+  flex: 1;
+  position: relative;
+  min-width: 560px;
+  height: 620px;
+}
+
+.fb-left-logo {
+    position: absolute;
+    top: -11px;
+    left: -263px;
+    z-index: 5;
+}
+
+.collage-wrap {
+  position: absolute;
+  top: -51px;
+  left: 170px;
+  width: 100%;
+}
+
+.collage-full-img {
+  width: 650px;
+  display: block;
+  height: auto;
+}
+
+.tagline-wrapper {
+  position: absolute;
+  left: -270px;
+  top: 450px;
+  width: 250px;
+}
+
+.full-login-tagline {
+  margin: 0;
+  font-size: 58px;
+  font-weight: 550;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: #111;
+}
+
+.tagline-blue {
+  color: #1877f2;
+}
+
+.tagline-dot {
+  color: #111;
+}
+
+.full-login-right {
+  flex: 1 1 360px;
+  max-width: 470px;
+  padding-left: 20px;
+  padding-top: 10px;
+  transform: translate(245px, 100px);
+  margin-top: 50px;
+}
+
+.full-login-heading {
+  font-size: 22px;
+  margin: 0 0 16px 0;
+}
+
+.full-login-input {
+  width: 100%;
+  height: 56px;
+  padding: 0px 18px;
+  font-size: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 11px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.full-login-input:focus {
+  outline: none;
+  border-color: #1877f2;
+}
+
+.full-login-btn {
+  width: 100%;
+  background: #1877f2;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 24px;
+  height: 44px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.full-login-btn:hover {
+  background: #166fe5;
+}
+
+.full-login-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.full-forgot-btn {
+  width: 100%;
+  background: #ffff;
+  color: #1c1e21;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px;
+  height: 44px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.full-forgot-btn:hover {
+  background: #e4e6eb;
+}
+
+.full-create-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  color: #1877f2;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #1877f2;
+  border-radius: 24px;
+  height: 44px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.full-create-btn:hover {
+  background: #f0f6ff;
+}
+
+.full-meta-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.full-login-footer {
+    border-top: 1px solid #dadde1;
+    padding-top: 92px;
+    text-align: left;
+    padding-left: 252px;
+}
+
+/* =========================================================
+   HOME PAGE (post-login)
+   ========================================================= */
+.fb-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.fb-header {
+  background: #fff;
+  padding: 10px 40px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.fb-logo {
+  color: #1877f2;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.fb-home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fb-logout-btn {
+  background: #e4e6eb;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fb-logout-btn:hover {
+  background: #d8dade;
+}
+
+.fb-home-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.fb-welcome-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  max-width: 480px;
+  text-align: center;
+}
+
+.fb-email-line {
+  color: #606770;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .full-login-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .full-login-tagline {
+    font-size: 30px;
+  }
+
+  .reg-name-row,
+  .reg-dob-row {
+    flex-direction: column;
+  }
+
+  .reg-half {
+    width: 100%;
+  }
+}   
