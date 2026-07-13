@@ -148,6 +148,9 @@ http://localhost:3000
   <img src="./images/registration.png" alt="Registration Page" width="900">
 </p>
 
+<p align="center">
+  <img src="./images/dashboard.png" alt="Registration Page" width="900">
+</p>
 ---
 
 ## 🖼️ Adding Your Own Images
