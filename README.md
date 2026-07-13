@@ -1,23 +1,80 @@
 # Facebook-Style Login & Registration (MERN)
 
-A full-stack clone of Facebook's login and registration UI, built with MongoDB, Express, React, and Node.js.
+A full-stack Facebook-inspired authentication application built using the **MERN Stack (MongoDB, Express, React, and Node.js)**. The project recreates Facebook's login and registration experience while implementing secure authentication using JWT and bcrypt.
 
-## What's included
+---
 
-- **Backend** (`/backend`): Express API with MongoDB (Mongoose), JWT authentication, and bcrypt password hashing.
-- **Frontend** (`/frontend`): React (Vite) app with Login, Register, and a protected Home page, styled to closely match Facebook's real login/register pages.
+## 🚀 Features
 
-## Features
+* User Registration with:
 
-- Register with first name, last name, email, password, birthday, and gender (same fields as Facebook's sign-up form)
-- Passwords hashed with bcrypt before being stored
-- Login issues a JWT, stored in `localStorage`
-- Protected `/home` route — redirects to login if not authenticated
-- Duplicate-email and invalid-login error handling
+  * First Name
+  * Last Name
+  * Email Address
+  * Password
+  * Birthday
+  * Gender
+* Secure password hashing using **bcrypt**
+* JWT-based authentication
+* Protected routes with automatic redirection
+* Duplicate email validation
+* Invalid login error handling
+* Responsive Facebook-inspired UI
 
-## Setup
+---
 
-### 1. Backend
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js
+* Vite
+* CSS3
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcrypt
+
+---
+
+## 📂 Project Structure
+
+```text
+facebook-auth-clone/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   └── server.js
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── vite.config.js
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/facebook-auth-clone.git
+cd facebook-auth-clone
+```
+
+---
+
+### 2. Backend Setup
 
 ```bash
 cd backend
@@ -25,21 +82,30 @@ npm install
 cp .env.example .env
 ```
 
-Edit `.env` and set:
-- `MONGO_URI` — your MongoDB connection string (local MongoDB or a free MongoDB Atlas cluster)
-- `JWT_SECRET` — any long random string
+Update your `.env` file:
 
-Start the server:
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+Start the backend server:
 
 ```bash
 npm run dev
 ```
 
-The API runs on `http://localhost:5000`.
+Backend runs on:
 
-### 2. Frontend
+```text
+http://localhost:5000
+```
 
-In a new terminal:
+---
+
+### 3. Frontend Setup
+
+Open another terminal:
 
 ```bash
 cd frontend
@@ -47,41 +113,90 @@ npm install
 npm run dev
 ```
 
-The app runs on `http://localhost:3000` and proxies `/api` requests to the backend.
+Frontend runs on:
 
-## Pages
+```text
+http://localhost:3000
+```
 
-- `/` — simple centered login (matches the plain "Facebook" title + card design)
-- `/register` — full registration form with Meta-style branding and footer
-- `/login` — the full two-column login page with the photo collage + "Find things you love" tagline (this is what Register's "I already have an account" button links to)
-- `/home` — protected page shown after logging in
+---
 
-## Adding your own images / logos
+## 📄 Application Pages
 
-I didn't include Meta's actual logo files or the collage photos since those are Meta's copyrighted/trademarked assets. Everything else (layout, spacing, colors, copy) is already coded to match. To finish matching the screenshots exactly, drop your own image files into `frontend/src/assets/` and update these spots:
+| Route       | Description                    |
+| ----------- | ------------------------------ |
+| `/`         | Simple Login Page              |
+| `/login`    | Full Facebook-style Login Page |
+| `/register` | Registration Page              |
+| `/home`     | Protected Home Page            |
 
-1. **Facebook "f" logo & Meta infinity logo** — currently simple CSS/SVG recreations in `frontend/src/components/Icons.jsx` (`FacebookCircleIcon` and `MetaLogo`). Replace the `<svg>` markup with `<img src="/src/assets/facebook-logo.png" />` etc. if you have the real files.
+---
 
-2. **Photo collage on `/login`** — in `frontend/src/pages/LoginFull.jsx`, look for the comment block:
-   ```jsx
-   {/* IMAGE PLACEHOLDERS ... */}
-   ```
-   Each `<div className="collage-img collage-img-1">` (and `-2`, `-3`) is a positioned placeholder block. Replace the `<div>` with an `<img>` tag, e.g.:
-   ```jsx
-   <img src="/src/assets/collage-1.jpg" className="collage-img collage-img-1" alt="" />
-   ```
-   The `collage-img-*` CSS classes in `App.css` already control size/position — an `<img>` with the same class will drop right into place (add `object-fit: cover;` inline if the photo's aspect ratio doesn't match).
+## 📸 Project Screenshots
 
-## Notes
+### Login Page
 
-- This project doesn't use Facebook's logo or any of their actual code/assets — it recreates the general layout, color scheme (Facebook blue `#1877F2`), and form fields for educational purposes only. It isn't affiliated with or endorsed by Meta/Facebook.
-- For production use, you'd want to add: email verification, refresh tokens, rate limiting on login attempts, HTTPS, and input sanitization beyond what's here.
+<p align="center">
+  <img src="./images/login.png" alt="Login Page" width="900">
+</p>
 
+---
 
-# Project Screenshots
+### Registration Page
 
-## Login Page
-![Login Page](images/login.png)
+<p align="center">
+  <img src="./images/registration.png" alt="Registration Page" width="900">
+</p>
 
-## Registartion
-![Dashboard](images/registration.png)
+---
+
+## 🖼️ Adding Your Own Images
+
+Place your images inside:
+
+```text
+frontend/src/assets/
+```
+
+Then use them like this:
+
+```jsx
+<img
+  src="/src/assets/collage-1.jpg"
+  className="collage-img collage-img-1"
+  alt="Collage"
+/>
+```
+
+---
+
+## 🔒 Security Features
+
+* Password Hashing with bcrypt
+* JWT Authentication
+* Protected Routes
+* Authentication Persistence using localStorage
+
+---
+
+## 📌 Future Improvements
+
+* Email Verification
+* Refresh Tokens
+* Password Reset
+* Rate Limiting
+* HTTPS Support
+* Input Sanitization
+* Social Login (Google/Facebook)
+
+---
+
+## 📜 Disclaimer
+
+This project is created for **educational purposes only**. It is not affiliated with, endorsed by, or connected to Meta or Facebook. No official Facebook code or assets are included in this repository.
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a **star ⭐ on GitHub**.
