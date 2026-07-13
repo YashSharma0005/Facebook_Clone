@@ -76,3 +76,12 @@ I didn't include Meta's actual logo files or the collage photos since those are 
 
 - This project doesn't use Facebook's logo or any of their actual code/assets — it recreates the general layout, color scheme (Facebook blue `#1877F2`), and form fields for educational purposes only. It isn't affiliated with or endorsed by Meta/Facebook.
 - For production use, you'd want to add: email verification, refresh tokens, rate limiting on login attempts, HTTPS, and input sanitization beyond what's here.
+
+
+# Project Screenshots
+
+## Login Page
+![Login Page](images/login.png)
+
+## Registartion
+![Dashboard](images/registration.png)
