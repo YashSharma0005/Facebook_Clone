@@ -155,7 +155,7 @@ http://localhost:3000
 
 ## 🖼️ Adding Your Own Images
 
-Place your images inside:
+<!-- Place your images inside:
 
 ```text
 frontend/src/assets/
@@ -164,12 +164,12 @@ frontend/src/assets/
 Then use them like this:
 
 ```jsx
-<img
-  src="/src/assets/collage-1.jpg"
-  className="collage-img collage-img-1"
-  alt="Collage"
-/>
-```
+// <img
+//   src="/src/assets/collage-1.jpg"
+//   className="collage-img collage-img-1"
+//   alt="Collage"
+// />
+``` -->
 
 ---
 
